@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheech & Chong's Global Holdings — Invest Now</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --accent: #ee2e53;
+  --accent-dark: #c9223f;
+  --accent-light: rgba(238,46,83,.08);
+  --black: #111111;
+  --white: #ffffff;
+  --off-white: #eee82066;
+  --gray-300: #cccccc;
+  --gray-500: #666666;
+  --gray-700: #333333;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ── GLOBAL TEXT RULES ── */
+h1, h2, h3, h4, .section-title, .crowd-quote, .brand-hero-stat,
+.detail-card .detail-value, .stat-number, .final-cta h2 {
+  font-family: var(--font-heading);
+  color: var(--black);
+}
+
+p, li, blockquote, .faq-answer p {
+  font-family: var(--font-body);
+  color: var(--gray-500);
+}
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(17,17,17,0.97); backdrop-filter: blur(12px);
+  padding: 12px 0; transition: box-shadow .3s;
+}
+.nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+.nav .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-logo img { height: 38px; }
+.nav-cta {
+  font-family: var(--font-heading);
+  background: var(--accent); color: #fff; padding: 10px 28px; border-radius: 6px;
+  text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: 1px;
+  text-transform: uppercase; transition: background .2s, transform .15s;
+}
+.nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+/* ── SECTIONS BASE ── */
+section { padding: 100px 0; position: relative; }
+.bg-white { background: var(--white); }
+.bg-off-white { background: var(--off-white); }
+
+.section-label {
+  display: inline-block; font-family: var(--font-heading); font-size: 13px;
+  font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 48px); font-weight: 700;
+  line-height: 1.1; margin-bottom: 20px; text-transform: uppercase;
+}
+.section-title .accent { color: var(--accent); }
+.section-subtitle {
+  font-size: 17px; color: var(--gray-500); line-height: 1.7; max-width: 640px;
+}
+
+/* ── BUTTON ── */
+.btn-invest {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-heading);
+  background: var(--accent); color: #fff; padding: 16px 44px; border-radius: 6px;
+  font-size: 16px; font-weight: 600; letter-spacing: 1.5px; text-decoration: none;
+  transition: all .25s; box-shadow: 0 4px 20px rgba(238,46,83,.3);
+  text-transform: uppercase; border: none; cursor: pointer;
+}
+.btn-invest:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(238,46,83,.4); }
+
+/* ══════════ SECTION 1: HERO ══════════ */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  background: #0e0e0e; padding-top: 80px; position: relative; overflow: hidden;
+}
+.hero-bg-video {
+  position: absolute; top: 50%; left: 50%;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto;
+  transform: translate(-50%, -50%);
+  opacity: 0.4; z-index: 0;
+  object-fit: cover;
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(238,46,83,.15) 0%, transparent 70%);
+  border-radius: 50%; z-index: 1;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -30%; left: -10%; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(238,46,83,.08) 0%, transparent 70%);
+  border-radius: 50%; z-index: 1;
+}
+.hero .container { position: relative; z-index: 2; }
+.hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.hero-video-wrapper { grid-column: 2; grid-row: 1 / span 5; align-self: center; }
+.hero-content h1 {
+  font-size: clamp(34px, 4.5vw, 58px); font-weight: 700;
+  color: #fff; line-height: 1.08; margin-bottom: 20px; text-transform: uppercase;
+}
+.hero-content h1 .accent { color: var(--accent); }
+.hero-content .subhead {
+  font-size: 18px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 28px; max-width: 520px;
+  font-family: var(--font-body); font-weight: 300;
+}
+.hero-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 36px;
+}
+.hero-stat {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 8px;
+}
+.hero-stat .check { color: var(--accent); font-weight: 700; font-size: 16px; }
+.hero-stat span { color: #fff; font-size: 13px; font-weight: 500; font-family: var(--font-body); }
+
+.hero-video {
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px; overflow: hidden; aspect-ratio: 16/9;
+  display: flex; align-items: center; justify-content: center; position: relative; cursor: pointer;
+}
+.play-btn {
+  width: 72px; height: 72px; border-radius: 50%; background: var(--accent);
+  display: flex; align-items: center; justify-content: center; z-index: 2;
+  box-shadow: 0 4px 24px rgba(238,46,83,.4); transition: transform .2s;
+}
+.play-btn:hover { transform: scale(1.1); }
+.play-btn svg { fill: #fff; width: 28px; margin-left: 4px; }
+
+/* ══════════ SECTION 2: MACRO LANDSCAPE ══════════ */
+.macro-section { position: relative; overflow: hidden; background: #EEE82066; }
+/* Cheech — anchored far left, bottom-aligned, may crop at bottom */
+.macro-section::before {
+  content: ''; position: absolute; left: 0; bottom: 0; top: 0;
+  width: 38%; z-index: 0; pointer-events: none;
+  background: url('Assets/Cheech-Left.png') left top / cover no-repeat;
+  opacity: 0.18;
+}
+/* Chong — anchored far right, top-aligned, crops at bottom */
+.macro-section::after {
+  content: ''; position: absolute; right: 0; bottom: 0; top: 0;
+  width: 38%; z-index: 0; pointer-events: none;
+  background: url('Assets/chong-right.png') right top / cover no-repeat;
+  opacity: 0.18;
+}
+/* Li-banner — centered, near top */
+.macro-bg-center {
+  position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+  width: 30%; z-index: 0; pointer-events: none; opacity: 0.22;
+}
+.macro-bg-center img { width: 100%; height: auto; display: block; }
+.macro-section > .container { position: relative; z-index: 1; }
+.macro-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+.macro-card {
+  background: var(--white); border-radius: 14px; padding: 32px 20px; text-align: center;
+  border: 1px solid rgba(0,0,0,.06); transition: transform .3s, box-shadow .3s;
+}
+.macro-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,.08); }
+.macro-card h3 { font-family: var(--font-heading); font-size: 17px; font-weight: 600; margin-bottom: 12px; color: var(--black); text-transform: uppercase; }
+.macro-card p { font-size: 13px; line-height: 1.6; }
+
+/* Donut chart for macro */
+.donut-wrap { width: 120px; height: 120px; margin: 0 auto 16px; position: relative; }
+.donut-wrap canvas { width: 120px; height: 120px; }
+.donut-center {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 28px; font-weight: 700; color: var(--accent);
+}
+
+/* Animated numbers */
+.stat-number {
+  font-size: 48px; font-weight: 700; color: var(--accent); margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.stat-caption { font-size: 12px; color: var(--gray-500); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+
+.macro-icon-box {
+  width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 16px;
+  background: var(--accent); display: flex; align-items: center; justify-content: center;
+  font-size: 26px; color: #fff;
+}
+
+/* ══════════ SECTION 3: IN THE MEDIA ══════════ */
+.media-split {
+  display: grid; grid-template-columns: 340px 1fr; gap: 48px; align-items: start;
+}
+.media-buttons {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.media-btn {
+  background: var(--white); border-radius: 12px; padding: 28px 20px;
+  border: 2px solid rgba(0,0,0,.06); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100px; transition: all .3s;
+}
+.media-btn:hover { border-color: rgba(238,46,83,.3); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.media-btn.active { border-color: var(--accent); box-shadow: 0 8px 24px rgba(238,46,83,.15); }
+.media-btn img {
+  max-width: 85%; height: 32px; object-fit: contain; opacity: .5; transition: opacity .3s;
+}
+.media-btn.active img, .media-btn:hover img { opacity: 1; }
+
+/* Screenshot deck */
+.media-deck {
+  position: relative; width: 100%; min-height: 200px;
+  perspective: 1200px;
+}
+.media-deck-card {
+  position: absolute; top: 0; left: 0; width: 92%; max-width: 600px;
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,.18);
+  transition: all .5s cubic-bezier(.4,0,.2,1);
+  cursor: default;
+}
+.media-deck-card img {
+  width: 100%; height: auto; display: block;
+}
+/* Stacking positions: card at index 0 is on top */
+.media-deck-card[data-pos="0"] { z-index: 4; transform: translate(0, 0) rotate(0deg); opacity: 1; }
+.media-deck-card[data-pos="1"] { z-index: 3; transform: translate(30px, 18px) rotate(1.5deg); opacity: .85; }
+.media-deck-card[data-pos="2"] { z-index: 2; transform: translate(55px, 36px) rotate(3deg); opacity: .65; }
+.media-deck-card[data-pos="3"] { z-index: 1; transform: translate(75px, 52px) rotate(4.5deg); opacity: .45; }
+
+@media (max-width: 991px) {
+  .media-split { grid-template-columns: 1fr; }
+  .media-deck { order: -1; margin-bottom: 24px; }
+  .media-buttons { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 600px) {
+  .media-buttons { grid-template-columns: 1fr 1fr; }
+  .media-deck-card { width: 95%; }
+  .media-deck-card[data-pos="1"] { transform: translate(15px, 12px) rotate(1deg); }
+  .media-deck-card[data-pos="2"] { transform: translate(28px, 24px) rotate(2deg); }
+  .media-deck-card[data-pos="3"] { transform: translate(38px, 34px) rotate(3deg); }
+}
+
+/* ══════════ SECTION 4: HUMAN IMPACT (TESTIMONIALS) ══════════ */
+/* Reviews carousel */
+.reviews-carousel-wrap { position: relative; overflow: hidden; }
+.reviews-carousel {
+  display: flex; gap: 16px;
+  overflow-x: auto; scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 0;
+}
+.reviews-carousel::-webkit-scrollbar { display: none; }
+.reviews-carousel img {
+  flex: 0 0 280px; width: 280px; height: auto;
+  border-radius: 12px; object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  transition: transform .3s;
+  user-select: none; -webkit-user-drag: none;
+}
+.reviews-carousel img:hover { transform: scale(1.03); }
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--white); border: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 3; transition: background .2s, box-shadow .2s;
+  font-size: 20px; color: var(--black); line-height: 1;
+}
+.carousel-btn:hover { background: var(--accent); color: #fff; box-shadow: 0 6px 20px rgba(238,46,83,.3); }
+.carousel-btn.prev { left: 8px; }
+.carousel-btn.next { right: 8px; }
+@media (max-width: 768px) {
+  .reviews-carousel img { flex: 0 0 240px; width: 240px; }
+}
+
+/* ══════════ SECTION 4: WHY CROWDFUNDING ══════════ */
+.crowd-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.crowd-visual {
+  border-radius: 16px; overflow: hidden;
+  background: #0e0e0e; padding: 48px; text-align: center;
+  min-height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.crowd-visual .side-label {
+  font-family: var(--font-heading); font-size: 24px; font-weight: 600;
+  color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: 4px;
+}
+.crowd-visual .side-label.you { color: #fff; }
+.crowd-visual .vs-text {
+  font-family: var(--font-heading); font-size: 90px; font-weight: 700;
+  color: var(--accent); margin: 16px 0;
+}
+.crowd-quote {
+  font-size: clamp(22px, 3vw, 34px); font-weight: 700;
+  line-height: 1.25; margin-bottom: 20px; text-transform: uppercase;
+}
+.crowd-quote .accent { color: var(--accent); }
+
+/* ══════════ SECTION 5: REVENUE GROWTH (D3) ══════════ */
+#revenue-container {
+  width: 100%; height: 500px; position: relative; margin-top: 48px;
+  background: var(--white); border-radius: 14px; border: 1px solid rgba(0,0,0,.06);
+  overflow: visible;
+}
+#revenue-container svg text { font-family: var(--font-body); }
+.revenue-tooltip {
+  position: absolute; background: rgba(17,17,17,0.95); color: #fff;
+  padding: 12px 16px; border-radius: 8px; pointer-events: none;
+  font-size: 13px; z-index: 100; border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 8px 32px rgba(0,0,0,.4); backdrop-filter: blur(4px);
+  opacity: 0; visibility: hidden; transition: opacity .2s;
+  font-family: var(--font-body);
+}
+.revenue-tooltip.show { opacity: 1; visibility: visible; }
+
+/* ══════════ SECTION 6: DRINKS MAP (D3) ══════════ */
+#map-container {
+  width: 100%; height: 550px; position: relative; margin-top: 40px;
+}
+#map-container svg text { font-family: var(--font-body); }
+#year-display {
+  font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;
+  color: var(--accent); text-transform: uppercase;
+}
+.map-tooltip {
+  position: absolute; background: rgba(17,17,17,0.95); color: #fff;
+  padding: 8px 14px; border-radius: 8px; font-size: 13px; font-family: var(--font-body);
+  pointer-events: none; z-index: 100;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
+}
+.map-tooltip.hidden { opacity: 0; }
+.map-counter {
+  text-align: center; margin-top: 16px; font-family: var(--font-heading);
+  font-size: 20px; font-weight: 600; color: var(--black);
+}
+.map-counter .num { color: var(--accent); font-size: 32px; font-weight: 700; }
+
+/* ══════════ SECTION 7: COMPETITIVE MOAT ══════════ */
+.moat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 40px; }
+.moat-visual { position: relative; }
+.moat-visual img { width: 100%; height: auto; border-radius: 12px; }
+
+.moat-features { list-style: none; }
+.moat-features li {
+  padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,.08);
+  font-size: 15px; color: var(--gray-500); display: flex; align-items: flex-start; gap: 12px;
+}
+.moat-features li .bullet {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  flex-shrink: 0; margin-top: 7px;
+}
+
+/* ══════════ SECTION 8: BRAND DIFFERENCE ══════════ */
+#brand { position: relative; overflow: hidden; }
+#brand::after {
+  content: ''; position: absolute; bottom: 0; right: 0;
+  width: 135%; height: 100%;
+  background: url('Assets/can-stacker.png') no-repeat bottom right;
+  background-size: contain;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+#brand .container { position: relative; z-index: 1; }
+.brand-hero-stat {
+  font-size: clamp(56px, 7vw, 96px); font-weight: 700;
+  color: var(--accent); text-align: center; margin-bottom: 4px; line-height: 1;
+}
+.brand-hero-label {
+  text-align: center; font-size: 18px; color: var(--gray-500); margin-bottom: 48px;
+  font-family: var(--font-body);
+}
+.social-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 48px; }
+.social-card {
+  background: var(--white); border-radius: 12px; padding: 24px 14px; text-align: center;
+  border: 1px solid rgba(0,0,0,.06); transition: transform .3s;
+}
+.social-card:hover { transform: translateY(-4px); }
+.social-card .platform {
+  font-family: var(--font-heading); font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 2px; color: var(--gray-500); margin-bottom: 8px;
+}
+.social-card .count { font-family: var(--font-heading); font-size: 30px; font-weight: 700; color: var(--black); }
+.social-card .suffix { font-size: 14px; color: var(--gray-500); }
+.social-card.highlight {
+  background: var(--accent); border-color: var(--accent);
+}
+.social-card.highlight .platform { color: rgba(255,255,255,.7); }
+.social-card.highlight .count { color: #fff; }
+.social-card.highlight .suffix { color: rgba(255,255,255,.8); }
+
+.brand-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+.brand-block {
+  background: var(--white); border-radius: 14px; padding: 32px;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.brand-block h3 { font-family: var(--font-heading); font-size: 19px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; }
+.brand-block p { font-size: 14px; line-height: 1.7; }
+
+/* ══════════ SECTION 9: INNOVATION ══════════ */
+.innovation-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 48px; }
+.innovation-card {
+  background: var(--white); border-radius: 14px; padding: 36px;
+  border: 1px solid rgba(0,0,0,.06); transition: transform .3s;
+  position: relative; overflow: hidden;
+}
+.innovation-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+.innovation-card .accent-bar {
+  position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent);
+}
+.innovation-card .card-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin-bottom: 20px;
+}
+.innovation-card h3 { font-family: var(--font-heading); font-size: 18px; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; }
+.innovation-card p { font-size: 14px; line-height: 1.7; }
+
+/* ══════════ SECTION 10: TEAM ══════════ */
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+.team-card {
+  background: var(--white); border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06); transition: transform .3s;
+}
+.team-card:hover { transform: translateY(-5px); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+.team-avatar {
+  height: 160px; background: #0e0e0e; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 40px; font-weight: 700; color: rgba(255,255,255,.15);
+  letter-spacing: 2px; overflow: hidden;
+}
+.team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.team-info { padding: 20px; }
+.team-info h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.team-info .role { font-family: var(--font-heading); font-size: 11px; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+.team-info p { font-size: 13px; line-height: 1.6; }
+
+/* ══════════ SECTION 11: REGULATION ══════════ */
+.reg-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.reg-card {
+  background: var(--white); border-radius: 14px; padding: 32px; text-align: center;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.reg-card .reg-icon {
+  width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 20px;
+  background: var(--accent); display: flex; align-items: center; justify-content: center;
+  font-size: 26px; color: #fff;
+}
+.reg-card h3 { font-family: var(--font-heading); font-size: 18px; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; }
+.reg-card p { font-size: 14px; line-height: 1.7; }
+
+/* ══════════ SECTION 12: WHY SEEKING INVESTMENT ══════════ */
+.dark-section {
+  background: #0e0e0e !important; text-align: center;
+}
+.dark-section .section-title { color: #fff; max-width: 800px; margin-left: auto; margin-right: auto; }
+.dark-section .section-subtitle { color: rgba(255,255,255,.6); max-width: 700px; margin: 0 auto; }
+
+/* ══════════ SECTION 13: INVESTMENT DETAILS ══════════ */
+.details-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.detail-card {
+  background: var(--white); border-radius: 14px; padding: 36px; text-align: center;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.detail-card .detail-value {
+  font-size: 42px; font-weight: 700; color: var(--accent); margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.detail-card .detail-label { font-size: 14px; color: var(--gray-500); }
+
+/* ══════════ SECTION 14: FAQs ══════════ */
+.faq-list { max-width: 800px; margin: 48px auto 0; }
+.faq-item { border-bottom: 1px solid rgba(0,0,0,.08); }
+.faq-question {
+  font-family: var(--font-heading); width: 100%; padding: 22px 0; font-size: 17px; font-weight: 500;
+  text-align: left; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  color: var(--black); transition: color .2s; text-transform: uppercase; letter-spacing: .5px;
+}
+.faq-question:hover { color: var(--accent); }
+.faq-question .arrow { transition: transform .3s; font-size: 18px; color: var(--accent); }
+.faq-item.open .faq-question .arrow { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+.faq-answer p { font-size: 15px; line-height: 1.7; }
+
+/* ══════════ FINAL CTA ══════════ */
+.final-cta { background: var(--accent); padding: 64px 0; text-align: center; }
+.final-cta h2 {
+  font-size: clamp(26px, 3.5vw, 44px); font-weight: 700; color: #fff;
+  margin-bottom: 24px; text-transform: uppercase;
+}
+.btn-invest-alt {
+  font-family: var(--font-heading); display: inline-flex; align-items: center; gap: 10px;
+  background: #fff; color: var(--accent); padding: 16px 44px; border-radius: 6px;
+  font-size: 16px; font-weight: 600; letter-spacing: 1.5px; text-decoration: none;
+  transition: all .25s; text-transform: uppercase;
+}
+.btn-invest-alt:hover { background: var(--off-white); transform: translateY(-2px); }
+
+/* ══════════ FOOTER ══════════ */
+.footer {
+  background: #0a0a0a; color: rgba(255,255,255,.45); padding: 48px 0; text-align: center;
+  font-size: 13px; font-family: var(--font-body);
+}
+.footer-logo { height: 30px; margin-bottom: 14px; opacity: .5; }
+.footnotes { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); }
+.footnotes p { font-size: 11px; color: rgba(255,255,255,.3); }
+sup { font-size: 10px; color: var(--accent); }
+
+/* ══════════ ANIMATIONS ══════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; transform: translateY(28px); transition: all .7s cubic-bezier(.22,1,.36,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════ RESPONSIVE ══════════ */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-video-wrapper { grid-column: auto; grid-row: auto; }
+  .hero-content .subhead { margin-left: auto; margin-right: auto; }
+  .hero-stats { max-width: 500px; margin-left: auto; margin-right: auto; }
+  .macro-grid { grid-template-columns: 1fr 1fr; }
+  .macro-section::before { width: 25%; top: 40px; bottom: 0; background-size: contain; background-position: left top; }
+  .macro-section::after { width: 25%; top: 40px; bottom: 0; background-size: contain; background-position: right top; }
+  .macro-bg-center { width: 40%; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .social-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  section { padding: 64px 0; }
+  .macro-grid, .brand-blocks, .innovation-grid, .moat-grid, .crowd-split { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .media-grid { grid-template-columns: 1fr 1fr; }
+  .details-grid, .reg-cards { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  #brand::after { width: 100%; background-position: top right; }
+  /* Reduce map section whitespace on mobile */
+  #drinks { padding: 40px 0 32px; }
+  #drinks .container { padding: 0 6px; }
+  #map-container { height: 300px; margin-top: 20px; width: calc(100% + 12px); margin-left: -6px; }
+  .map-counter { margin-top: 8px; font-size: 17px; }
+  .map-counter .num { font-size: 26px; }
+  #year-display { font-size: 1.2rem; }
+  #drinks .section-subtitle { font-size: 14px; margin-bottom: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ --><nav class="nav" id="nav">
+  <div class="container">
+    <a href="#" class="nav-logo"><img src="https://cheechandchong.com/cdn/shop/files/logo.png" alt="Cheech & Chong's"></a>
+    <a href="#invest" class="nav-cta">Invest Now</a>
+  </div>
+</nav>
+
+
+<!-- ═══ SECTION 1: HERO ═══ -->
+<section class="hero" id="hero">
+  <video class="hero-bg-video" autoplay muted loop playsinline>
+    <source src="Assets/Trailer-BG.mp4" type="video/mp4">
+  </video>
+  <div class="container">
+    <div class="hero-content">
+      <div class="section-label">Reg CF Offering</div>
+      <h1>Your Chance to Own a Stake in <span class="accent">The Most Iconic Brand</span> in Legal Cannabis</h1>
+      <p class="subhead">Profit from one of the largest shifts in consumer behavior in the last 100 years. Minimum investment is just <strong style="color:#fff;">$420</strong>.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="check">&#10003;</span><span>Day 1 Profitable</span></div>
+        <div class="hero-stat"><span class="check">&#10003;</span><span>No Previous Outside Investments</span></div>
+        <div class="hero-stat"><span class="check">&#10003;</span><span>Bootstrapped to Over $50M Revenue</span></div>
+        <div class="hero-stat"><span class="check">&#10003;</span><span>Poised to Dominate a $50B Market</span></div>
+      </div>
+      <div class="hero-video-wrapper">
+        <div class="hero-video" id="heroVideo">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg>
+          </div>
+        </div>
+      </div>
+      <a href="#invest" class="btn-invest">Invest Now &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2: MACRO LANDSCAPE ═══ -->
+<section class="macro-section" id="macro">
+  <div class="macro-bg-center"><img src="Assets/Li-banner.png" alt=""></div>
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">The Opportunity</div>
+      <div class="section-title">The <span class="accent">Macro</span> Landscape</div>
+      <p class="section-subtitle" style="margin:0 auto;">Consumer shifts, federal momentum, and explosive growth are converging right now.</p>
+    </div>
+    <div class="macro-grid">
+      <!-- Card 1: Donut -->
+      <div class="macro-card reveal" id="macroCard1">
+        <div class="donut-wrap">
+          <canvas id="donutDrinking" width="240" height="240"></canvas>
+          <div class="donut-center"><span id="donutLabel">0</span>%</div>
+        </div>
+        <h3>Drinking Is Down</h3>
+        <p>41% of U.S. consumers are cutting back on alcohol — 1 in 3 Millennials &amp; Gen Z now choose THC drinks, and 56% of Gen Z cannabis users are ditching drinking entirely.<sup>2,3</sup></p>
+      </div>
+      <!-- Card 2: Counter -->
+      <div class="macro-card reveal" id="macroCard2">
+        <div class="stat-number" id="counterMedicinal">0</div>
+        <div class="stat-caption">Million Americans</div>
+        <h3>Medicinal Use</h3>
+        <p>64 million Americans already use cannabis for relaxation, anxiety, and pain — including 22 million using it nightly as a sleep aid.<sup>4</sup></p>
+      </div>
+      <!-- Card 3: Icon -->
+      <div class="macro-card reveal">
+        <div class="macro-icon-box">&#9878;</div>
+        <h3>Government Changes</h3>
+        <p>The 2018 Farm Bill legalized hemp commerce. In Dec 2025 an executive order directed cannabis rescheduling. Federal legalization is coming — fast.<sup>5</sup></p>
+      </div>
+      <!-- Card 4: Counter -->
+      <div class="macro-card reveal" id="macroCard4">
+        <div class="stat-number" id="counterGrowth">$0</div>
+        <div class="stat-caption">Projected by 2030</div>
+        <h3>Industry Growth</h3>
+        <p>The U.S. legal cannabis market is surging to $50B+ by 2030 — the brands with trust and distribution now will own the category.<sup>6</sup></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3: IN THE MEDIA ═══ -->
+<section class="bg-white" id="media" style="overflow:hidden;">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">As Seen In</div>
+      <div class="section-title">Cheech &amp; Chong <span class="accent">in the Media</span></div>
+    </div>
+    <div class="media-split reveal">
+      <div class="media-buttons">
+        <button class="media-btn active" data-outlet="forbes">
+          <img src="Assets/Forbes_logo.svg" alt="Forbes">
+        </button>
+        <button class="media-btn" data-outlet="wsj">
+          <img src="Assets/The_Wall_Street_Journal_Logo.svg" alt="The Wall Street Journal">
+        </button>
+        <button class="media-btn" data-outlet="uproxx">
+          <img src="Assets/Uproxx.svg" alt="Uproxx">
+        </button>
+        <button class="media-btn" data-outlet="vice">
+          <img src="Assets/Vice_TV_logo.svg" alt="Vice TV">
+        </button>
+      </div>
+      <div class="media-deck" id="mediaDeck">
+        <div class="media-deck-card" data-outlet="forbes" data-pos="0">
+          <img src="Assets/ForbesScreenshot.png" alt="Forbes article about Cheech and Chong">
+        </div>
+        <div class="media-deck-card" data-outlet="wsj" data-pos="1">
+          <img src="Assets/WSJScreenshot.png" alt="Wall Street Journal article about Cheech and Chong">
+        </div>
+        <div class="media-deck-card" data-outlet="uproxx" data-pos="2">
+          <img src="Assets/UproxxScreenshot.png" alt="Uproxx article about Cheech and Chong">
+        </div>
+        <div class="media-deck-card" data-outlet="vice" data-pos="3">
+          <img src="Assets/ViceScreenshot.png" alt="Vice TV feature on Cheech and Chong">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4: HUMAN IMPACT ═══ -->
+<section class="bg-off-white" id="impact">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Real Stories</div>
+      <div class="section-title">The <span class="accent">Human</span> Impact</div>
+      <p class="section-subtitle" style="margin:0 auto 32px;">Millions use Cheech &amp; Chong products to relax, recover, and reconnect.</p>
+    </div>
+    <div class="reviews-carousel-wrap">
+      <button class="carousel-btn prev" aria-label="Previous">&#8249;</button>
+      <div class="reviews-carousel" id="reviewsCarousel">
+        <img src="Assets/REVIEWS.io Social Proof Image (1).jpg" alt="Customer Review 1" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (2).jpg" alt="Customer Review 2" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (3).jpg" alt="Customer Review 3" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (4).jpg" alt="Customer Review 4" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (5).jpg" alt="Customer Review 5" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (6).jpg" alt="Customer Review 6" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (7).jpg" alt="Customer Review 7" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (8).jpg" alt="Customer Review 8" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (9).jpg" alt="Customer Review 9" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (10).jpg" alt="Customer Review 10" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (11).jpg" alt="Customer Review 11" loading="lazy">
+        <img src="Assets/REVIEWS.io Social Proof Image (12).jpg" alt="Customer Review 12" loading="lazy">
+      </div>
+      <button class="carousel-btn next" aria-label="Next">&#8250;</button>
+    </div>
+    <p style="text-align:center;margin-top:24px;font-family:var(--font-body);font-size:15px;color:var(--gray-500);line-height:1.6;">Individual experiences vary. Products are not intended to diagnose, treat, cure, or prevent any disease.</p>
+  </div>
+</section>
+
+<!-- Section 4 (Wall Street vs. You) removed — replaced by Human Impact testimonials above -->
+
+<!-- ═══ SECTION 5: BRAND GROWTH (D3 Revenue Chart) ═══ -->
+<section class="bg-white" id="growth">
+  <div class="container">
+    <div style="text-align:center;">
+     <div class="section-label">Our Journey</div>
+      <div class="section-title">Revenue <span class="accent">Growth</span></div>
+  <p class="section-subtitle" style="margin:0 auto;">Hover over each bar to explore revenue milestones and growth metrics year over year.</p>
+    </div>
+    <div id="revenue-container" class="reveal"></div>
+    <div class="revenue-tooltip" id="revenueTooltip"></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6: DRINKS MAP (D3 Animated Map) ═══ -->
+<section class="bg-off-white" id="drinks" style="background-image:url('Assets/lift-off.png'); background-size:cover; background-position:center;">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Beverages</div>
+      <div class="section-title">Market <span class="accent">Expansion</span></div>
+      <p class="section-subtitle" style="margin:0 auto;">Watch our THC beverage distribution expand coast to coast. Hover over the timeline to explore each year.</p>
+      <div id="year-display" style="margin-top:12px;">2022</div>
+    </div>
+    <div id="map-container" class="reveal"></div>
+    <div class="map-counter" id="mapCounter"></div>
+    <div class="map-tooltip hidden" id="mapTooltipD3"></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 7: COMPETITIVE MOAT ═══ -->
+<section class="bg-white" id="moat">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Strategic Advantage</div>
+      <div class="section-title">Competitive <span class="accent">Moat</span></div>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-visual reveal">
+        <img src="Assets/loyalty-cycle.jpg" alt="Loyalty Cycle" style="width:100%;height:auto;border-radius:12px;">
+      </div>
+      <div class="reveal">
+        <p class="section-subtitle" style="max-width:100%;margin-bottom:24px;">The dual-track nature of Cheech &amp; Chong's business — direct-to-consumer marketing alongside brand licensing for retail — supports small, independent operators at the state level and ensures the business is positioned for growth no matter how the landscape shifts.</p>
+        <ul class="moat-features">
+          <li><span class="bullet"></span>Direct-to-consumer channels capture margin and customer data</li>
+          <li><span class="bullet"></span>State-level licensing empowers independent operators to grow with us</li>
+          <li><span class="bullet"></span>Regulatory flexibility — if one channel faces headwinds, the other thrives</li>
+          <li><span class="bullet"></span>Dual revenue streams create resilience and compounding growth</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 8: BRAND DIFFERENCE ═══ -->
+<section class="bg-off-white" id="brand">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Unmatched Reach</div>
+      <div class="section-title">The Brand <span class="accent">Difference</span></div>
+      <p class="section-subtitle" style="margin:0 auto 32px;">After 50 years, Cheech &amp; Chong doesn't need to build brand awareness or trust — we already have what new cannabis companies spend millions trying to buy.</p>
+    </div>
+    <div class="brand-hero-stat reveal" id="followerCount">0</div>
+    <div class="brand-hero-label">Million+ Followers Across Social Media</div>
+    <div class="social-grid reveal">
+      <div class="social-card">
+        <div class="platform">TikTok</div>
+        <div class="count">7.4<span class="suffix">M</span></div>
+      </div>
+      <div class="social-card">
+        <div class="platform">Snapchat</div>
+        <div class="count">93<span class="suffix">K</span></div>
+      </div>
+      <div class="social-card">
+        <div class="platform">Facebook</div>
+        <div class="count">1.5<span class="suffix">M</span></div>
+      </div>
+      <div class="social-card">
+        <div class="platform">Instagram</div>
+        <div class="count">3.1<span class="suffix">M</span></div>
+      </div>
+      <div class="social-card">
+        <div class="platform">X (Twitter)</div>
+        <div class="count">710<span class="suffix">K</span></div>
+      </div>
+      <div class="social-card highlight">
+        <div class="platform">Monthly</div>
+        <div class="count">2B+</div>
+        <div class="suffix">Impressions</div>
+      </div>
+    </div>
+    <div class="brand-blocks">
+      <div class="brand-block reveal">
+        <h3>Pit Punch &amp; Collabs</h3>
+        <p>We proved our system is repeatable — launching Pit Punch to $1M+ in sales and 50 million impressions in its first year. Strategic partnerships like Rolling Loud (11.52M followers) are introducing the brand to younger audiences discovering us for the first time.</p>
+      </div>
+      <div class="brand-block reveal">
+        <h3>A Multi-Generational Empire</h3>
+        <p>Cheech &amp; Chong resonates across generations. With Joey Marin, Jasmine Marin, and Paris Chong powering the future of the company, we're building a legacy that grows stronger with every new generation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 9: PRODUCT & TECH INNOVATION ═══ -->
+<section class="bg-white" id="innovation">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Built Different</div>
+      <div class="section-title">Product &amp; <span class="accent">Technology</span> Innovation</div>
+    </div>
+    <div class="innovation-grid">
+      <div class="innovation-card reveal">
+        <div class="accent-bar"></div>
+        <div class="card-icon">&#129302;</div>
+        <h3>AI-Powered Efficiency</h3>
+        <p>We use AI across nearly every function — customer service, marketing, inventory forecasting — to operate with the efficiency of a company 10X our size.</p>
+      </div>
+      <div class="innovation-card reveal">
+        <div class="accent-bar"></div>
+        <div class="card-icon">&#128640;</div>
+        <h3>Meeting Customers Everywhere</h3>
+        <p>Our multipoint activation strategy stacks retail, online, social, and events — every touchpoint drives awareness and feeds customers into the next, multiplying the chances they buy and keep buying.</p>
+      </div>
+      <div class="innovation-card reveal">
+        <div class="accent-bar"></div>
+        <div class="card-icon">&#127873;</div>
+        <h3>Buy In-Store, Redeem Online</h3>
+        <p>Customers buy in-store or online, earn points either way, and redeem rewards seamlessly — capturing data across ALL channels, driving repeat purchases, and increasing lifetime value.</p>
+      </div>
+      <div class="innovation-card reveal">
+        <div class="accent-bar"></div>
+        <div class="card-icon">&#129514;</div>
+        <h3>Advanced Emulsion Tech</h3>
+        <p>Our beverages use water-soluble, shelf-stable THC emulsions for consistent dosing, no separation, and reliable effects in every can.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 10: LEADERSHIP TEAM ═══ -->
+<section class="bg-off-white" id="team" style="background-image:url('Assets/Team-Pic-BW.png'); background-size:cover; background-position:center;">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">The Team</div>
+      <div class="section-title">Leadership <span class="accent">Team</span></div>
+      <p class="section-subtitle" style="margin:0 auto;">World-class operators, advisors, and next-gen leaders building a cannabis empire.</p>
+    </div>
+    <div class="team-grid" id="teamGrid"></div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 11: REGULATION & SAFETY ═══ -->
+<section class="bg-white" id="regulation">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Trust &amp; Compliance</div>
+      <div class="section-title">Regulation &amp; <span class="accent">Safety</span></div>
+      <p class="section-subtitle" style="margin:0 auto;">We don't just follow laws — we help shape them.</p>
+    </div>
+    <div class="reg-cards">
+      <div class="reg-card reveal">
+        <div class="reg-icon">&#9878;</div>
+        <h3>Advocacy</h3>
+        <p>We work directly with lawmakers on legalization, positioning Cheech &amp; Chong ahead of regulatory changes — not behind them.</p>
+      </div>
+      <div class="reg-card reveal">
+        <div class="reg-icon">&#128270;</div>
+        <h3>Trust &amp; Transparency</h3>
+        <p>We use Ball Corporation aluminum cans with specialized interior coatings to prevent potency loss. Every product is made from American-grown hemp and third-party tested for potency, contaminants, and safety.</p>
+      </div>
+      <div class="reg-card reveal">
+        <div class="reg-icon">&#9889;</div>
+        <h3>Rapid Compliance</h3>
+        <p>Our supply chain pivots fast when regulations shift. When Florida changed its rules, we were back on shelves in 7 weeks — we've come a long way from our days of smoking "Labrador" joints.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 12: WHY SEEKING INVESTMENT ═══ -->
+<section class="dark-section" id="why-invest">
+  <div class="container">
+    <div class="section-label">The Moment</div>
+    <div class="section-title" style="margin-bottom:28px;">Why We're Seeking <span class="accent">Investment</span></div>
+    <p class="section-subtitle">After 50 years, you've been with us through it all. Now we want YOU to own a piece of what happens next. THC beverages are exploding and federal legalization is coming — and when it does, the brands already in position will capture the massive growth ahead.</p>
+    <p class="section-subtitle" style="margin-top:20px;">Cheech &amp; Chong is already in 26 states, doing $50M in revenue, trusted by millions. You've seen it happen before with alcohol Prohibition — the people who invested early benefited the most. This is that moment. And this time, you're invited.</p>
+    <div style="margin-top:48px;">
+      <a href="#invest" class="btn-invest">Invest Now &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 13: INVESTMENT DETAILS ═══ -->
+<section class="bg-off-white" id="invest">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Get In Early</div>
+      <div class="section-title">Investment <span class="accent">Details</span></div>
+      <p class="section-subtitle" style="margin:0 auto;">Own a piece of the most iconic brand in legal cannabis — starting at just $420.</p>
+    </div>
+    <div class="details-grid reveal">
+      <div class="detail-card">
+        <div class="detail-value">$420</div>
+        <div class="detail-label">Minimum Investment</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-value">Reg CF</div>
+        <div class="detail-label">SEC Regulated Offering</div>
+      </div>
+      <div class="detail-card">
+        <div class="detail-value">$50M+</div>
+        <div class="detail-label">Annual Revenue</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="#" class="btn-invest" style="font-size:18px;padding:18px 56px;">Invest Now &rarr;</a>
+      <p style="margin-top:16px;font-size:13px;color:var(--gray-500);">Investing involves risk. See offering circular for details.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 14: FAQs ═══ -->
+<section class="bg-white" id="faq">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Questions?</div>
+      <div class="section-title">Frequently Asked <span class="accent">Questions</span></div>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<div class="final-cta">
+  <div class="container">
+    <h2>Join the Legacy. Own the Future.</h2>
+    <a href="#invest" class="btn-invest-alt">Invest Now &rarr;</a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <img src="https://cheechandchong.com/cdn/shop/files/logo.png" alt="Cheech & Chong's" class="footer-logo"><br>
+    <p>&copy; 2026 Cheech &amp; Chong's Global Holdings. All rights reserved.</p>
+    <p style="margin-top:8px;">This page is not an offer to sell securities. Offers are made only through the official offering documents filed with the SEC.</p>
+    <div class="footnotes" style="text-align:left;max-width:800px;margin:24px auto 0;">
+      <p><sup>2,3</sup> Industry surveys and consumer behavior research, 2024-2025. <sup>4</sup> National cannabis usage studies. <sup>5</sup> Agriculture Improvement Act of 2018; Executive Order, December 2025. <sup>6</sup> Market projections from leading industry analysts.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- D3.js, TopoJSON, GSAP Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+<script>
+/* ══════════════════════════════════════
+   CORE: SCROLL REVEAL
+   ══════════════════════════════════════ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+
+function observeAll() {
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}
+observeAll();
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* ══════════════════════════════════════
+   SECTION 2: DONUT CHART (Drinking Is Down)
+   ══════════════════════════════════════ */
+function drawDonut(canvasId, percent, labelId) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const size = 240;
+  canvas.width = size; canvas.height = size;
+  const cx = size/2, cy = size/2, r = 90, lw = 18;
+  let current = 0;
+  const target = percent;
+  const labelEl = document.getElementById(labelId);
+
+  function draw(val) {
+    ctx.clearRect(0, 0, size, size);
+    // Background ring
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = '#ddd';
+    ctx.lineWidth = lw;
+    ctx.stroke();
+    // Foreground ring
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, -Math.PI/2, -Math.PI/2 + (Math.PI*2 * val / 100));
+    ctx.strokeStyle = '#ee2e53';
+    ctx.lineWidth = lw;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+    if (labelEl) labelEl.textContent = Math.round(val);
+  }
+
+  function animate() {
+    current += (target - current) * 0.06;
+    if (Math.abs(current - target) < 0.5) { draw(target); return; }
+    draw(current);
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+const donutObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      drawDonut('donutDrinking', 41, 'donutLabel');
+      donutObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+const mc1 = document.getElementById('macroCard1');
+if (mc1) donutObserver.observe(mc1);
+
+/* ══════════════════════════════════════
+   SECTION 2: ANIMATED COUNTERS
+   ══════════════════════════════════════ */
+function animateCounter(elId, target, prefix, suffix, duration) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  const start = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+    const val = Math.round(target * eased);
+    el.textContent = (prefix || '') + val + (suffix || '');
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      if (e.target.id === 'macroCard2') animateCounter('counterMedicinal', 64, '', 'M', 1800);
+      if (e.target.id === 'macroCard4') animateCounter('counterGrowth', 50, '$', 'B+', 1800);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+['macroCard2','macroCard4'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) counterObserver.observe(el);
+});
+
+/* ══════════════════════════════════════
+   SECTION 3: MEDIA DECK (SCREENSHOT SHUFFLE)
+   ══════════════════════════════════════ */
+(function() {
+  const btns = document.querySelectorAll('.media-btn');
+  const cards = document.querySelectorAll('.media-deck-card');
+  if (!btns.length || !cards.length) return;
+
+  // Order tracks which outlet is at which position
+  let order = Array.from(cards).map(c => c.dataset.outlet);
+
+  function updateDeck(selectedOutlet) {
+    // Move selected to front
+    const idx = order.indexOf(selectedOutlet);
+    if (idx > 0) {
+      order.splice(idx, 1);
+      order.unshift(selectedOutlet);
+    }
+    // Apply positions
+    cards.forEach(card => {
+      const pos = order.indexOf(card.dataset.outlet);
+      card.setAttribute('data-pos', pos);
+    });
+    // Update button active state
+    btns.forEach(b => {
+      b.classList.toggle('active', b.dataset.outlet === selectedOutlet);
+    });
+    sizeDeck();
+  }
+
+  // Dynamically size the deck container to match the front card's actual height
+  const deck = document.getElementById('mediaDeck');
+  function sizeDeck() {
+    const front = deck.querySelector('[data-pos="0"]');
+    if (front) {
+      const h = front.offsetHeight;
+      // Add a little extra for the stacked cards offset behind
+      deck.style.minHeight = (h + 60) + 'px';
+    }
+  }
+  // Size on load and resize
+  window.addEventListener('load', sizeDeck);
+  window.addEventListener('resize', sizeDeck);
+  // Also size once images finish loading
+  deck.querySelectorAll('img').forEach(img => {
+    img.addEventListener('load', sizeDeck);
+  });
+  sizeDeck();
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => updateDeck(btn.dataset.outlet));
+  });
+})();
+
+/* ══════════════════════════════════════
+   REVIEWS CAROUSEL (INFINITE SCROLL)
+   ══════════════════════════════════════ */
+(function() {
+  const track = document.getElementById('reviewsCarousel');
+  if (!track) return;
+  const imgs = Array.from(track.children);
+  // Clone all images and append to create seamless loop
+  imgs.forEach(img => {
+    const clone = img.cloneNode(true);
+    track.appendChild(clone);
+  });
+  const cardW = 280 + 16; // width + gap
+  const totalOriginal = imgs.length * cardW;
+
+  // Infinite loop: when scrolled past clones, jump back; when before start, jump to end
+  track.addEventListener('scroll', function() {
+    if (track.scrollLeft >= totalOriginal) {
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft -= totalOriginal;
+      track.style.scrollBehavior = 'smooth';
+    } else if (track.scrollLeft <= 0) {
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft += totalOriginal;
+      track.style.scrollBehavior = 'smooth';
+    }
+  });
+
+  // Button navigation
+  const wrap = track.closest('.reviews-carousel-wrap');
+  const prevBtn = wrap.querySelector('.carousel-btn.prev');
+  const nextBtn = wrap.querySelector('.carousel-btn.next');
+  const scrollAmt = cardW * 2;
+  prevBtn.addEventListener('click', () => { track.scrollLeft -= scrollAmt; });
+  nextBtn.addEventListener('click', () => { track.scrollLeft += scrollAmt; });
+
+  // Auto-scroll
+  let autoScroll = setInterval(() => { track.scrollLeft += 1; }, 30);
+  wrap.addEventListener('mouseenter', () => clearInterval(autoScroll));
+  wrap.addEventListener('mouseleave', () => {
+    autoScroll = setInterval(() => { track.scrollLeft += 1; }, 30);
+  });
+})();
+
+/* ══════════════════════════════════════
+   SECTION 5: REVENUE GROWTH (D3.js)
+   ══════════════════════════════════════ */
+function initRevenueChart() {
+  const container = document.getElementById('revenue-container');
+  if (!container) return;
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  d3.select('#revenue-container').selectAll('*').remove();
+  d3.selectAll('.revenue-tooltip').remove();
+
+  const svg = d3.select('#revenue-container')
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height);
+
+  // Gradient
+  const defs = svg.append('defs');
+  const grad = defs.append('linearGradient')
+    .attr('id', 'revenue-gradient')
+    .attr('x1', '0%').attr('y1', '100%')
+    .attr('x2', '0%').attr('y2', '0%');
+  grad.append('stop').attr('offset', '0%').attr('stop-color', '#c9223f');
+  grad.append('stop').attr('offset', '100%').attr('stop-color', '#ee2e53');
+
+  const isMobile = width < 600;
+  const margin = { top: 60, right: isMobile ? 20 : 40, bottom: 60, left: isMobile ? 40 : 60 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  const data = [
+    { year: '2022', value: 12.4, d2c: 40, licensing: 5, growth: 0, milestone: 'Beverages launch in 8 states; 5,000+ pts' },
+    { year: '2023', value: 20.1, d2c: 45, licensing: 7, growth: 62, milestone: '18 states, Pit Punch hits $1M+ year one' },
+    { year: '2024', value: 36.6, d2c: 50, licensing: 9, growth: 82, milestone: '22 states, Rolling Loud partnership' },
+    { year: '2025', value: 45, d2c: 55, licensing: 12, growth: 23, milestone: '26 states, $50M+ rev, Reg CF launched' },
+    { year: '2026', value: 65, projected: true, d2c: 60, licensing: 18, growth: 44, milestone: 'Projected: federal legalization tailwinds' }
+  ];
+
+  const xScale = d3.scaleBand().domain(data.map(d => d.year)).range([0, innerWidth]).padding(0.3);
+  const yScale = d3.scaleLinear().domain([0, 70]).range([innerHeight, 0]);
+
+  // X Axis
+  const xAxis = g.append('g')
+    .attr('transform', `translate(0,${innerHeight})`)
+    .call(d3.axisBottom(xScale))
+    .attr('font-size', isMobile ? '10px' : '14px')
+    .attr('font-weight', 'bold');
+  xAxis.selectAll('text')
+    .attr('fill', d => d === '2026' ? '#ee2e53' : '#111')
+    .attr('font-family', 'Oswald')
+    .text(d => d === '2026' ? (isMobile ? "2026'" : '2026 (Proj)') : d);
+  xAxis.selectAll('.domain, .tick line').attr('stroke', 'rgba(0,0,0,0.15)');
+
+  // Y Grid
+  g.append('g')
+    .call(d3.axisLeft(yScale).tickSize(-innerWidth).tickFormat(''))
+    .attr('stroke-dasharray', '3 3').attr('opacity', 0.1);
+
+  // Bars (start at bottom for animation)
+  const bars = g.selectAll('.bar').data(data).enter().append('rect')
+    .attr('class', 'bar')
+    .attr('x', d => xScale(d.year))
+    .attr('y', innerHeight)
+    .attr('width', xScale.bandwidth())
+    .attr('height', 0)
+    .attr('fill', 'url(#revenue-gradient)')
+    .attr('rx', 6);
+
+  // Tooltip
+  const tooltip = d3.select('body').append('div')
+    .attr('class', 'revenue-tooltip')
+    .style('position', 'absolute').style('pointer-events', 'none').style('z-index', '9999')
+    .style('background', 'rgba(17,17,17,0.95)').style('border', '1px solid rgba(255,255,255,0.15)')
+    .style('border-radius', '8px').style('padding', '12px')
+    .style('box-shadow', '0 8px 32px rgba(0,0,0,0.4)').style('font-family', 'Roboto, sans-serif')
+    .style('opacity', '0').style('visibility', 'hidden');
+
+  bars.on('mouseenter', function(event, d) {
+    d3.select(this).attr('fill', '#ff1744').attr('filter', 'drop-shadow(0 0 8px rgba(238,46,83,0.5))');
+    tooltip.style('opacity', '1').style('visibility', 'visible')
+      .html(`<div style="text-align:left;min-width:160px;">
+        <div style="font-family:Oswald;font-weight:700;margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:4px;font-size:1.1em;color:#fff;">${d.year} Overview</div>
+        <div style="margin-bottom:4px;color:#ccc;font-size:.9em;">Revenue: <strong style="color:#fff;">$${d.value}M</strong></div>
+        <div style="margin-bottom:4px;color:#ccc;font-size:.9em;">% Rev D2C: <strong style="color:#fff;">${d.d2c}%</strong></div>
+        <div style="margin-bottom:4px;color:#ccc;font-size:.9em;">Licensing: <strong style="color:#fff;">$${d.licensing}M</strong></div>
+        <div style="font-size:.9em;margin-top:6px;">Growth: <span style="color:#4caf50;font-weight:700;background:rgba(76,175,80,0.1);padding:2px 6px;border-radius:4px;">+${d.growth}%</span></div>
+        <div style="margin-top:6px;font-size:.8em;color:#999;">${d.milestone}</div>
+      </div>`);
+  }).on('mousemove', function(event) {
+    let left = event.pageX + 15;
+    if (left + 200 > window.innerWidth) left = event.pageX - 200;
+    tooltip.style('left', left + 'px').style('top', (event.pageY + 15) + 'px');
+  }).on('mouseleave', function() {
+    d3.select(this).transition().duration(200).attr('fill', 'url(#revenue-gradient)').attr('filter', 'none');
+    tooltip.style('opacity', '0').style('visibility', 'hidden');
+  });
+
+  // Line overlay
+  const line = d3.line()
+    .x(d => xScale(d.year) + xScale.bandwidth() / 2)
+    .y(d => yScale(d.value))
+    .curve(d3.curveMonotoneX);
+
+  const path = g.append('path').datum(data)
+    .attr('fill', 'none').attr('stroke', '#fdd835').attr('stroke-width', 4)
+    .attr('d', line).attr('stroke-linecap', 'round')
+    .attr('filter', 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))');
+
+  const pathLength = path.node().getTotalLength();
+  path.attr('stroke-dasharray', pathLength).attr('stroke-dashoffset', pathLength);
+
+  // Value labels above bars
+  const labels = g.selectAll('.label').data(data).enter().append('text')
+    .attr('x', d => xScale(d.year) + xScale.bandwidth() / 2)
+    .attr('y', d => yScale(d.value) - 10)
+    .attr('text-anchor', 'middle').attr('fill', '#111')
+    .attr('font-weight', 'bold').attr('font-size', isMobile ? '10px' : '14px')
+    .attr('font-family', 'Oswald').attr('opacity', 0)
+    .text(d => `$${d.value}M`);
+
+  return {
+    animate: () => {
+      bars.transition().duration(1000).delay((d, i) => i * 100)
+        .ease(d3.easeBackOut.overshoot(0.5))
+        .attr('y', d => yScale(d.value))
+        .attr('height', d => innerHeight - yScale(d.value));
+      path.transition().duration(1500).delay(500).ease(d3.easeCubicOut).attr('stroke-dashoffset', 0);
+      labels.transition().duration(500).delay((d, i) => 1000 + i * 100).attr('opacity', 1);
+    }
+  };
+}
+
+// Initialize + ScrollTrigger for Revenue Chart
+gsap.registerPlugin(ScrollTrigger);
+let revenueChart;
+const revenueObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      revenueChart = initRevenueChart();
+      ScrollTrigger.create({
+        trigger: '#revenue-container',
+        start: 'top 70%',
+        onEnter: () => { if (revenueChart) revenueChart.animate(); }
+      });
+      revenueObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+const revCont = document.getElementById('revenue-container');
+if (revCont) revenueObserver.observe(revCont);
+window.addEventListener('resize', () => {
+  const rc = document.getElementById('revenue-container');
+  if (rc && rc.classList.contains('visible')) {
+    revenueChart = initRevenueChart();
+    if (revenueChart) revenueChart.animate();
+  }
+});
+
+/* ══════════════════════════════════════
+   SECTION 6: MARKET EXPANSION MAP (D3 + TopoJSON)
+   ══════════════════════════════════════ */
+function initMap() {
+  const container = document.getElementById('map-container');
+  if (!container) return;
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  d3.select('#map-container').selectAll('*').remove();
+
+  const svg = d3.select('#map-container')
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height);
+
+  const mapGroup = svg.append('g');
+
+  const projection = d3.geoAlbersUsa()
+    .translate([width / 2, (height - 100) / 2])
+    .scale(width * 0.9);
+
+  const path = d3.geoPath().projection(projection);
+
+  const colorDefault = '#ddd';
+  const colorHighlight = '#ee2e53';
+
+  // Timeline: explicit FIPS codes for highlighted states each year (cumulative)
+  const timeline = {
+    2022: ["05","32"],
+    2023: ["05","32","28","04","26","25","06","27"],
+    2024: ["05","32","28","04","26","25","06","27","41","23","40","08","10","12","13","17","20","37","34","39","46","47","48","55"],
+    2025: ["05","32","28","04","26","25","06","27","41","23","40","08","10","12","13","17","20","37","34","39","46","47","48","55","09","36","01","19","22","29","44","45"],
+    2026: ["05","32","28","04","26","25","27","41","23","40","08","10","12","13","17","20","37","34","39","46","47","48","55","09","36","01","19","22","29","44","45","30"],
+    2027: ["05","32","28","04","26","25","27","41","23","40","08","10","12","13","17","20","37","34","39","46","47","48","55","09","36","01","19","22","29","44","45","30","42","51","24","18","53"],
+    2028: ["05","32","28","04","26","25","27","41","23","40","08","10","12","13","17","20","37","34","39","46","47","48","55","09","36","01","19","22","29","44","45","30","42","51","24","18","53","21","33","35","31","16"]
+  };
+
+  let statePaths;
+
+  d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(us => {
+    const states = topojson.feature(us, us.objects.states).features;
+
+    statePaths = mapGroup.append('g')
+      .selectAll('path')
+      .data(states)
+      .enter().append('path')
+      .attr('d', path)
+      .attr('fill', colorDefault)
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 1)
+      .attr('id', d => `state-${d.id}`);
+
+    statePaths.on('mouseenter', function(event, d) {
+      d3.select(this).attr('stroke', '#111').attr('stroke-width', 1.5);
+      const tipEl = document.getElementById('mapTooltipD3');
+      tipEl.classList.remove('hidden');
+      tipEl.innerHTML = `<strong>${d.properties?.name || 'State'}</strong>`;
+      tipEl.style.left = (event.offsetX + 14) + 'px';
+      tipEl.style.top = (event.offsetY - 30) + 'px';
+    }).on('mouseleave', function() {
+      d3.select(this).attr('stroke', '#fff').attr('stroke-width', 1);
+      document.getElementById('mapTooltipD3').classList.add('hidden');
+    });
+
+    // Set initial state
+    mapInstance.update(2022);
+  });
+
+  // Build interactive timeline at bottom of SVG
+  const timelineData = [2022, 2023, 2024, 2025, 2026, 2027, 2028];
+  const timelineScale = d3.scalePoint()
+    .domain(timelineData)
+    .range([60, width - 60])
+    .padding(0.5);
+
+  const timelineGroup = svg.append('g')
+    .attr('transform', `translate(0, ${height - 50})`);
+
+  // Axis line
+  timelineGroup.append('line')
+    .attr('x1', 60).attr('x2', width - 60)
+    .attr('stroke', '#ccc').attr('stroke-width', 2);
+
+  const ticks = timelineGroup.selectAll('.timeline-tick')
+    .data(timelineData)
+    .enter().append('g')
+    .attr('class', 'timeline-tick')
+    .attr('cursor', 'pointer')
+    .attr('transform', d => `translate(${timelineScale(d)}, 0)`);
+
+  ticks.append('circle')
+    .attr('r', 7).attr('fill', '#fff')
+    .attr('stroke', '#ee2e53').attr('stroke-width', 2.5);
+
+  ticks.append('text')
+    .attr('y', 26).attr('text-anchor', 'middle')
+    .attr('fill', '#666').attr('font-family', 'Oswald')
+    .style('font-size', '13px').style('font-weight', '600')
+    .text(d => {
+      if (width < 500 && d >= 2026) return `${d}'`;
+      return d >= 2026 ? `${d} (Proj)` : `${d}`;
+    });
+
+  // Invisible hit area for hover
+  ticks.append('rect')
+    .attr('x', -35).attr('y', -20).attr('width', 70).attr('height', 60)
+    .attr('fill', 'transparent')
+    .on('mouseenter', (event, d) => {
+      if (window.mapInterval) clearInterval(window.mapInterval);
+      mapInstance.update(d);
+    });
+
+  const mapInstance = {
+    update: (year) => {
+      if (!statePaths) return;
+
+      const activeStates = timeline[year] || [];
+      const targetCount = activeStates.length;
+      const isProjected = year >= 2026;
+
+      d3.select('#year-display').text(isProjected ? `${year} (Projected)` : `${year}`);
+
+      // Update counter
+      const counterEl = document.getElementById('mapCounter');
+      if (counterEl) counterEl.innerHTML = `<span class="num">${targetCount}</span> states in ${year}`;
+
+      // Highlight active tick
+      ticks.selectAll('circle')
+        .transition().duration(200)
+        .attr('fill', d => d === year ? '#ee2e53' : '#fff');
+
+      const redStateIds = new Set(activeStates);
+
+      statePaths.transition().duration(500)
+        .attr('fill', d => redStateIds.has(d.id) ? colorHighlight : colorDefault);
+    }
+  };
+
+  return mapInstance;
+}
+
+// Initialize map + auto-play on scroll
+let mapViz;
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      mapViz = initMap();
+      // Auto-play timeline animation
+      ScrollTrigger.create({
+        trigger: '#map-container',
+        start: 'top 60%',
+        onEnter: () => {
+          if (mapViz) {
+            const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028];
+            let i = 0;
+            if (mapViz.update) mapViz.update(years[0]);
+            window.mapInterval = setInterval(() => {
+              i++;
+              if (i < years.length && mapViz.update) {
+                mapViz.update(years[i]);
+              } else {
+                clearInterval(window.mapInterval);
+              }
+            }, 1200);
+          }
+        }
+      });
+      mapObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+const mapCont = document.getElementById('map-container');
+if (mapCont) mapObserver.observe(mapCont);
+window.addEventListener('resize', () => {
+  const mc = document.getElementById('map-container');
+  if (mc && mc.classList.contains('visible')) {
+    if (window.mapInterval) clearInterval(window.mapInterval);
+    mapViz = initMap();
+  }
+});
+
+/* ══════════════════════════════════════
+   SECTION 8: FOLLOWER COUNTER
+   ══════════════════════════════════════ */
+const followerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = document.getElementById('followerCount');
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / 2000, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = (12.8 * eased).toFixed(1);
+        el.textContent = val + 'M+';
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = '12.8M+';
+      }
+      requestAnimationFrame(tick);
+      followerObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+const fc = document.getElementById('followerCount');
+if (fc) followerObserver.observe(fc);
+
+/* ══════════════════════════════════════
+   SECTION 10: TEAM CARDS
+   ══════════════════════════════════════ */
+const teamMembers = [
+  { name: 'Jonathan Black', role: 'CEO', bio: 'An accomplished entrepreneur and attorney with experience across real estate, entertainment, tech, retail, cannabis, and law. His policy work has put Cheech & Chong at the forefront of legal cannabis.', img: 'Assets/team/JonathanBlack.png' },
+  { name: 'Brandon Harshbarger', role: 'President', bio: 'Guides national expansion of products and partnerships spanning product development, distribution, and brand collaborations across retail, media, and live entertainment.', img: 'Assets/team/Brandon-BW.jpeg' },
+  { name: 'Tom Cole', role: 'Advisory Board', bio: 'Former CEO of Republic National Distributing Company, where he grew revenues to over $12 billion annually. Helps forge partnerships in beverage distribution.', img: 'Assets/team/TomColeBW.jpeg' },
+  { name: 'Timothy Seymour', role: 'Advisory Board', bio: 'Active cannabis investor and frequent CNBC contributor. Brings decades of institutional investment experience to navigate financial and regulatory realities.', img: 'Assets/team/TimSeymour.png' },
+  { name: 'Thomas Harrison', role: 'Advisory Board', bio: "Former CEO and Chairman Emeritus of Omnicom Group's largest division. Guides business and policy relationships with unmatched healthcare marketing experience.", img: 'Assets/team/TomHarrison.png' },
+  { name: 'Joey Marin', role: 'Chief Product Officer', bio: 'A staunch cannabis advocate who translates a lifetime of knowledge into a carefully curated product menu for consumers of all types.', img: 'Assets/team/JoeyMarin.png' },
+  { name: 'Jasmine Marin', role: 'Creative Director', bio: 'Brings her vision and design sensibility to the overall look and feel of the brand with a focus on retail experiences.', img: 'Assets/team/JasmineMarin.png' },
+  { name: 'Paris Chong', role: 'Operations & Marketing', bio: 'Serial entrepreneur and investor who brings business expertise and deep connection with the brand to guide the next generation of the Cheech & Chong legacy.', img: 'Assets/team/ParisChong.png' },
+];
+const teamGrid = document.getElementById('teamGrid');
+teamMembers.forEach(m => {
+  const card = document.createElement('div');
+  card.className = 'team-card reveal';
+  const initials = m.name.split(' ').map(n => n[0]).join('');
+  const avatarHTML = m.img
+    ? `<div class="team-avatar"><img src="${m.img}" alt="${m.name}"></div>`
+    : `<div class="team-avatar">${initials}</div>`;
+  card.innerHTML = `
+    ${avatarHTML}
+    <div class="team-info">
+      <h3>${m.name}</h3>
+      <div class="role">${m.role}</div>
+      <p>${m.bio}</p>
+    </div>`;
+  teamGrid.appendChild(card);
+});
+
+/* ══════════════════════════════════════
+   SECTION 14: FAQs
+   ══════════════════════════════════════ */
+const faqs = [
+  { q: 'What is Regulation Crowdfunding (Reg CF)?', a: 'Reg CF is an SEC-regulated framework that allows everyday investors — not just accredited ones — to invest in private companies. It democratizes access to early-stage opportunities previously reserved for Wall Street.' },
+  { q: 'What is the minimum investment?', a: 'The minimum investment is just $420. You can invest more, subject to SEC limits based on your annual income and net worth.' },
+  { q: "Is Cheech & Chong's actually profitable?", a: "Yes. Cheech & Chong's Global Holdings has been profitable from Day 1, with no previous outside investment. The company has been bootstrapped to over $50 million in annual revenue." },
+  { q: 'How will my investment be used?', a: 'Funds will accelerate expansion into new states, increase manufacturing capacity, scale beverage distribution, and invest in marketing to capture the massive growth ahead of federal legalization.' },
+  { q: 'What are the risks?', a: 'All investments carry risk, including potential loss of your entire investment. The cannabis industry faces regulatory uncertainty, market competition, and evolving legal frameworks. See the full offering circular for details.' },
+  { q: 'Is cannabis federally legal?', a: 'Hemp-derived products (under 0.3% THC) are federally legal under the 2018 Farm Bill. Cannabis rescheduling is underway following a December 2025 executive order. Full federal legalization would significantly expand the market.' },
+  { q: 'How many states is Cheech & Chong in?', a: 'As of 2025, Cheech & Chong products are distributed in 26 states and growing. Our dual-track model ensures rapid expansion.' },
+  { q: 'When will I see a return?', a: 'Returns are not guaranteed. As a Reg CF investor, you would benefit from future liquidity events such as an IPO, acquisition, or dividend distributions. Timeline depends on performance and market conditions.' },
+];
+const faqList = document.getElementById('faqList');
+faqs.forEach(f => {
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `<button class="faq-question">${f.q}<span class="arrow">&#9662;</span></button><div class="faq-answer"><p>${f.a}</p></div>`;
+  item.querySelector('.faq-question').addEventListener('click', () => item.classList.toggle('open'));
+  faqList.appendChild(item);
+});
+
+// Re-observe all dynamically added .reveal elements
+observeAll();
+</script>
+</body>
+</html>
